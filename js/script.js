@@ -37,36 +37,46 @@ $(document).ready(function() {
     var resultArea = $("#result");
     var ball = $("#ball");
     resultArea.html("<h1>" + pingPongResult + "</h1>");
+
     if (resultArea.text() === "PING-PONG!!!") {
-      if (ball.style.left === "0%") {
+      if (ball.hasClass("left")) {
         ball.animate({
           left: "98%"
         }, 'slow');
 
         ball.animate({
-          left: 0
+          left: "0%"
         }, 'slow');
-      } else {
+      }
+      else if (ball.hasClass("right")) {
         ball.animate({
-          left: "98%"
+          left: "0%"
         }, 'slow');
 
         ball.animate({
-          left: 0
+          left: "98%"
         }, 'slow');
       }
     }
 
     if (resultArea.text() === "ping" || resultArea.text() === "pong") {
-      if (ball.style.left === "0%") {
+      if (ball.hasClass("left")) {
         ball.animate({
           left: "98%"
         }, 'slow');
-      } else {
+
+        ball.removeClass("left");
+        ball.addClass("right");
+      }
+      else if (ball.hasClass("right")) {
         ball.animate({
           left: "0%"
         }, 'slow');
+
+        ball.removeClass("right");
+        ball.addClass("left");
       }
     }
+
   });
 });
