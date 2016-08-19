@@ -34,6 +34,39 @@ $(document).ready(function() {
     $("#result").html("");
     var pingPongResult = pingPong(number);
 
-    $("#result").html("<h1>" + pingPongResult + "</h1>");
+    var resultArea = $("#result");
+    var ball = $("#ball");
+    resultArea.html("<h1>" + pingPongResult + "</h1>");
+    if (resultArea.text() === "PING-PONG!!!") {
+      if (ball.style.left === "0%") {
+        ball.animate({
+          left: "98%"
+        }, 'slow');
+
+        ball.animate({
+          left: 0
+        }, 'slow');
+      } else {
+        ball.animate({
+          left: "98%"
+        }, 'slow');
+
+        ball.animate({
+          left: 0
+        }, 'slow');
+      }
+    }
+
+    if (resultArea.text() === "ping" || resultArea.text() === "pong") {
+      if (ball.style.left === "0%") {
+        ball.animate({
+          left: "98%"
+        }, 'slow');
+      } else {
+        ball.animate({
+          left: "0%"
+        }, 'slow');
+      }
+    }
   });
 });
