@@ -19,12 +19,11 @@ $(document).ready(function() {
     else {
       var numList = [];
     	for (var i = 1; i <= num; i++) {
-
         numList.push(i);
       }
       return numList.join("<br>");
     }
-  }
+  };
 
   // User-Interface Logic
   $("#user-number").submit(function(event){
