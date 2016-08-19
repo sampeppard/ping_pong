@@ -6,15 +6,15 @@
 
 ## Description
 
-This is an application that takes a number a user enters and returns either a select string or a list of number up to and including that number.
+This is an application that takes a number a user enters and returns a list of number up to and including that number with the following exceptions.
 
-If the number is divisible by 3, the program returns "ping".
+If the number is divisible by 3, the program returns "ping" for that particular number.
 
-If the number is divisible by 5, the program returns "pong".
+If the number is divisible by 5, the program returns "pong" for that particular number.
 
-If the number is divisible by 15, the program returns "PING-PONG".
+If the number is divisible by 15, the program returns "PING-PONG!!!" for that particular number.
 
-If none of the above conditions are met the program returns all of the numbers up to and including the entered number.
+If none of the above conditions are met the program returns all of the numbers up to and including the entered number with zero exceptions.
 
 ## Specifications
 
@@ -23,22 +23,22 @@ If none of the above conditions are met the program returns all of the numbers u
 * Example Input: "a" or "!"
 * Example Output: "Please enter a number"
 
-#### 2. Return "PING-PONG!" when the entered number is divisible by 15.
+#### 2. Return "PING-PONG!" when a particular number is divisible by 15.
 
-* Example Input: 45
-* Example Output: "PING-PONG!"
+* Example Input: 15
+* Example Output: 1 2 ping 4 pong ping 7 8 ping pong 11 ping 13 14 PING-PONG!!!
 
-#### 3. Return "ping" when the entered number is divisible by 3.
+#### 3. Return "ping" when a particular number is divisible by 3.
 
 * Example Input: 3
-* Example Output: "ping"
+* Example Output: 1 2 ping
 
-#### 4. Return "pong" when the entered number is divisible by 5.
+#### 4. Return "pong" when a particular number is divisible by 5.
 
 * Example Input: 5
-* Example Output: "pong"
+* Example Output: 1 2 ping 4 pong
 
-#### 5. Return a list of numbers from 1 up to and including the entered number if the number is not divisible by 3, 5 or 15.
+#### 5. Return the list of numbers up to the entered number with zero exceptions.
 
 * Example Input: 2
 * Example Output: 1, 2
