@@ -3,9 +3,10 @@ $(document).ready(function() {
   // Business Logic
   var pingPong = function(num) {
     var numList = [];
-    if (isNaN(num)) {
-      return "Please enter a valid number yo.";
-    } else {
+    if (isNaN(num) || num < 1) {
+      return "Please enter a valid number that is greater than 0 yo.";
+    }
+    else {
       for (var i = 1; i <= num; i++) {
         if (i % 15 === 0) {
           var exception1 = num[i];
@@ -26,7 +27,7 @@ $(document).ready(function() {
         }
       }
 
-      return numList.join("<br>");
+      return numList.join(" ");
     }
   };
 
@@ -36,37 +37,63 @@ $(document).ready(function() {
     //grab user input
     var number = parseInt($("#input-number").val());
     $("#result").html("");
+    $("tr.counter").html("");
     var pingPongResult = pingPong(number);
 
     var resultArea = $("#result");
     var ball = $("#ball");
-    resultArea.html("<h1>" + pingPongResult + "</h1>");
+    resultArea.html("<p>" + pingPongResult + "</p>");
+    var resultArr = resultArea.text().split(" ");
+    console.log(resultArr);
 
-    if (number % 15 === 0) {
+    var ping = 0;
+    var pong = 0;
+    var pingAndPong = 0;
+    for (var j = 0; j < resultArr.length; j++) {
+      if (resultArr[j] === "PING-PONG!!!") {
+        pingAndPong++;
+        $("tr#ping-pong").append("<td>ping-pong</td>");
+      }
+      else if (resultArr[j] === "pong") {
+        pong++;
+        $("tr#pong").append("<td>pong</td>");
+      }
+      else if (resultArr[j] === "ping") {
+        ping++;
+        $("tr#ping").append("<td>ping</td>");
+      }
+
+    }
+
+    if (number % 15 === 0 && number >= 1) {
       if (ball.hasClass("left")) {
         ball.animate({
-          left: "98%"
+          left: "98%",
+          top: "95%"
         }, 'slow');
 
         ball.animate({
-          left: "0%"
+          left: "0%",
+          top: "5%"
         }, 'slow');
       }
       else if (ball.hasClass("right")) {
         ball.animate({
-          left: "0%"
+          left: "0%",
+          top: "5%"
         }, 'slow');
 
         ball.animate({
-          left: "98%"
+          left: "98%",
+          top: "95%"
         }, 'slow');
       }
     }
-
-    if (number % 5 === 0 || number % 3 === 0) {
+    else if ((number % 5 === 0 || number % 3 === 0) && number >= 1) {
       if (ball.hasClass("left")) {
         ball.animate({
-          left: "98%"
+          left: "98%",
+          top: "95%"
         }, 'slow');
 
         ball.removeClass("left");
@@ -74,7 +101,8 @@ $(document).ready(function() {
       }
       else if (ball.hasClass("right")) {
         ball.animate({
-          left: "0%"
+          left: "0%",
+          top: "5%"
         }, 'slow');
 
         ball.removeClass("right");

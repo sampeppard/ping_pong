@@ -25,7 +25,43 @@
         </div>
         <button type="submit" class="btn btn-success">Let's Play!</button>
       </form>
-      <div id="result"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="result"></div>
+        </div>
+        <div class="col-xs-12 counter-tables">
+          <div id="result2"></div>
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="table table-bordered">
+                <tr>
+                  <th>pings</th>
+                  <th>pongs</th>
+                  <th>ping-pongs</th>
+                </tr>
+              </table>
+            </div>
+            <div class="col-xs-4">
+              <table class="table table-striped">
+                <tr id="ping" class="counter">
+                </tr>
+              </table>
+            </div>
+            <div class="col-xs-4">
+              <table class="table table-striped">
+                <tr id="pong" class="counter">
+                </tr>
+              </table>
+            </div>
+            <div class="col-xs-4">
+              <table class="table table-striped">
+                <tr id="ping-pong" class="counter">
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/bootstrap.min.js"></script>

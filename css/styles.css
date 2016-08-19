@@ -39,7 +39,7 @@ header {
 #ball {
   position: absolute;
   left: 0%;
-  top: 50%;
+  top: 5%;
   width: 20px;
   height: 20px;
   background-color: #ffffff;
@@ -55,6 +55,22 @@ header {
   width: 100%;
   margin: 10px 0;
   padding: 10px 0;
+}
+
+table {
+  float: left;
+  width: 100%;
+}
+
+th, td {
+  width: 33.3%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
