@@ -65,6 +65,10 @@ JavaScript
 jQuery version 3.1.0.
 Bootstrap version 3.3.7.
 
+## Link to project on Github Pages
+
+https://sampeppard.github.io/ping_pong/
+
 ### License
 
 *This application is licensed under the MIT license*
