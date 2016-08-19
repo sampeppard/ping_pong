@@ -1,26 +1,31 @@
 $(document).ready(function() {
 
   // Business Logic
-
   var pingPong = function(num) {
-
+    var numList = [];
     if (isNaN(num)) {
       return "Please enter a valid number yo.";
-    }
-    else if (num % 15 === 0) {
-      return "PING-PONG!!!";
-    }
-    else if (num % 3 === 0) {
-    	return "ping";
-    }
-    else if (num % 5 === 0) {
-      return "pong";
-    }
-    else {
-      var numList = [];
-    	for (var i = 1; i <= num; i++) {
-        numList.push(i);
+    } else {
+      for (var i = 1; i <= num; i++) {
+        if (i % 15 === 0) {
+          var exception1 = num[i];
+          exception1 = "PING-PONG!!!";
+          numList.push(exception1);
+        }
+        else if (i % 3 === 0) {
+          var exception2 = num[i];
+        	exception2  = "ping";
+          numList.push(exception2);
+        }
+        else if (i % 5 === 0) {
+          var exception3 = num[i];
+          exception3 = "pong";
+          numList.push(exception3);
+        } else {
+          numList.push(i);
+        }
       }
+
       return numList.join("<br>");
     }
   };
@@ -37,7 +42,7 @@ $(document).ready(function() {
     var ball = $("#ball");
     resultArea.html("<h1>" + pingPongResult + "</h1>");
 
-    if (resultArea.text() === "PING-PONG!!!") {
+    if (number % 15 === 0) {
       if (ball.hasClass("left")) {
         ball.animate({
           left: "98%"
@@ -58,7 +63,7 @@ $(document).ready(function() {
       }
     }
 
-    if (resultArea.text() === "ping" || resultArea.text() === "pong") {
+    if (number % 5 === 0 || number % 3 === 0) {
       if (ball.hasClass("left")) {
         ball.animate({
           left: "98%"
